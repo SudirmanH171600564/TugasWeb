@@ -10,6 +10,7 @@ Commit 10 September 2019
 Test Login
 Login/Register dengan No. Telp berhasil
 Captcha pada Login & Register selesai
-Commit 11 September 2019
 
-07:00 #dc13afa: Tugas2 Login & Register sudah fixed
+Commit 11 September 2019
+Tugas2 Login & Register Proses
+
