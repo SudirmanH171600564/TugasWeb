@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/Rizky92/H171600554_Muhammad-Rizky-Rizaldi_WEB2">This GitHub Repo</a>
+                    <a href="https://github.com/sudirman10/TugasWeb">GIThub</a>
                 </div>
             </div>
         </div>
