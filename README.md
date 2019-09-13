@@ -8,7 +8,7 @@ Tugas 1 diupload (Login & Register)
 Commit 10 September 2019
 
 Test Login
-Login/Register dengan No. Telp berhasil
+Login Sama Register dengan No. Telp berhasil
 Captcha pada Login & Register selesai
 
 Commit 11 September 2019
