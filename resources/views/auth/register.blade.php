@@ -29,7 +29,7 @@
                             <label for="telp" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telp" type="tel" class="form-control @error('telp') is-invalid @enderror" name="telp" value="{{ old('telp') }}" required autocomplete="telp">
+                                <input id="telp" type="telp" class="form-control @error('telp') is-invalid @enderror" name="telp" value="{{ old('telp') }}" required autocomplete="telp">
 
                                 @error('telp')
                                     <span class="invalid-feedback" role="alert">
@@ -38,6 +38,8 @@
                                 @enderror
                             </div>
                         </div>
+
+                       
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -61,27 +63,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('CAPTCHA') }}</label>
-
-                            <div class="col-md-6">
-                                {!! Captcha::img() !!}
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha">
-
-                                @error('captcha')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
