@@ -42,10 +42,16 @@
                         <div class="form-group row">
                             <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('CAPTCHA') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 {!! captcha_img('flat'); !!}
                             </div>
+
+                            <div class="col-md-1">
+                                <button class="btn btn-secondary">
+                                    {{ __('Refresh') }}
+                            </button>
                         </div>
+                    </div>
 
                         <div class="form-group row">
                             <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
