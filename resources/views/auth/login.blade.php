@@ -43,13 +43,14 @@
                             <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('CAPTCHA') }}</label>
 
                             <div class="col-md-6">
-                                {!! Captcha::img() !!}
+                                {!! captcha_img('flat'); !!}
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
-
+                            
+                            
                             <div class="col-md-6">
                                 <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha">
 
