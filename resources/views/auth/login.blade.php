@@ -45,7 +45,8 @@
                             <div class="col-md-4">
                                 {!! captcha_img('flat'); !!}
                             </div>
-
+                            
+                        <!-- Perintah Refresh -->
                             <div class="col-md-1">
                                 <button class="btn btn-secondary">
                                     {{ __('Refresh') }}
