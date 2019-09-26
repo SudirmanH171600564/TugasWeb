@@ -4,7 +4,7 @@
 
 <body>
 
-<table border= "5">
+<table border= "1">
 <tr>
 <td>ID </td>	
 <td>JUDUL </td>

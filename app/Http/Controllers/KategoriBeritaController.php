@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\KategoriBerita;
 
-class KategoriBeritalController extends Controller
+class KategoriBeritaController extends Controller
 {
     public function index(){
         $KategoriBerita=KategoriBerita::all();
