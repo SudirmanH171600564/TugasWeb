@@ -6,7 +6,7 @@
 
 <body>
 
-<table border= "1">
+<table align='center' border= "1">
 <tr>
 <td>ID </td>
 <td>NAMA </td>

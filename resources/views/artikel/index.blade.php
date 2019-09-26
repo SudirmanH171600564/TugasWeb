@@ -1,10 +1,10 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 
 <body>
 
-<table border= "1">
+<table border= "5">
 <tr>
 <td>ID </td>	
 <td>JUDUL </td>
