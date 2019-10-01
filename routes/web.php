@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/refereshcapcha', 'HelperController@refereshCapcha');
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,33 +20,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/kategori_artikel','KategoriArtikelController@index')->name('kategori_artikel.index');
+Route::get('/kategori_artikel/create','KategoriArtikelController@create')->name('kategori_artikel.create');
+Route::post('/kategori_artikel','KategoriArtikelController@store')->name('kategori_artikel.store');
+Route::get('/kategori_artikel/{id}','KategoriArtikelController@show')->name('kategori_artikel.show');
+
+
 
 Route::get('/kategori_berita','KategoriBeritaController@index')->name('kategori_berita.index');
-Route::get('/kategori_artikel','KategoriArtikelController@index')->name('kategori_artikel.index');
 Route::get('/kategori_galeri','KategoriGaleriController@index')->name('kategori_galeri.index');
 Route::get('/kategori_pengumuman','KategoriPengumumanController@index')->name('kategori_pengumuman.index');
 Route::get('/artikel','ArtikelController@index')->name('artikel.index');
 Route::get('/berita','BeritaController@index')->name('berita.index');
 Route::get('/galeri','GaleriController@index')->name('galeri.index');
 Route::get('/pengumuman','PengumumanController@index')->name('pengumuman.index');
+ 
 
-
-Route::any('captcha-test', function() {
-    if (request()->getMethod() == 'POST') {
-        $rules = ['captcha' => 'required|captcha'];
-        $validator = validator()->make(request()->all(), $rules);
-        if ($validator->fails()) {
-            echo '<p style="color: #ff0000;">Incorrect!</p>';
-        } else {
-            echo '<p style="color: #00ff30;">Matched :)</p>';
-        }
-    }
-
-    $form = '<form method="post" action="captcha-test">';
-    $form .= '<input type="hidden" name="_token" value="' . csrf_token() . '">';
-    $form .= '<p>' . captcha_img() . '</p>';
-    $form .= '<p><input type="text" name="captcha"></p>';
-    $form .= '<p><button type="submit" name="check">Check</button></p>';
-    $form .= '</form>';
-    return $form;
-});

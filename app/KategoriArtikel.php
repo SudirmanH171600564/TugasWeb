@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class KategoriArtikel extends Model
 {
-    //
+    
     protected $table="kategori_artikel";
 
-    protected $fillable=['user_id','nama'];
+    protected $fillable=['nama','users_id'];
+
+    protected $casts=[];    
 }

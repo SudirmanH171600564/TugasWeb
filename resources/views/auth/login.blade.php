@@ -40,26 +40,21 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('CAPTCHA') }}</label>
-
-                            <div class="col-md-4">
-                                {!! captcha_img('flat'); !!}
+                            <div class="offset-md-4 col-md-6">
+                            <div class="hasil_refereshrecapcha"> 
+                                 {!! captcha_img('flat'); !!}
                             </div>
-                            
-                        <!-- Perintah Refresh -->
-                            <div class="col-md-1">
-                                <button class="btn btn-secondary">
-                                    {{ __('Refresh') }}
-                            </button>
-                        </div>
-                    </div>
 
-                        <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
-                            
+                                <br>
+                                <a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh</a>
+                             </div>
+                            </div>
+
+                            <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('CONFIRM CAPTCHA') }}</label> 
                             
                             <div class="col-md-6">
-                                <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha">
+                            <input id="captcha" class="form-control" type="text" name="captcha" data-validation="required" >
 
                                 @error('captcha')
                                     <span class="invalid-feedback" role="alert">
@@ -101,3 +96,21 @@
     </div>
 </div>
 @endsection
+
+@section('scripts')
+    <script>
+        function refreshCaptcha(){
+            $.ajax({
+            url: "/refereshcapcha",
+            type: 'get',
+    dataType: 'html',        
+        success: function(json) {
+        $('.hasil_refereshrecapcha').html(json);
+        },
+            error: function(data) {
+            alert('Try Again.');
+        }
+     });
+    }
+</script>
+@endsection 
