@@ -6,10 +6,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" align="center">{{ __('List Artikel') }}</div>
+                <div class="card-header">{{ __('List Artikel') }}</div>
 
                 <div class="card-body">
-                <a href="{!! route('artikel.create') !!}" class="btn btn-primary" >Tambah Data</a>
+                <a href="{!! route('artikel.create') !!}" class="btn btn-primary" >Add Data</a>
                     <form>
                        
                         <div class="form-group row">

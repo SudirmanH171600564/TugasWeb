@@ -21,7 +21,7 @@
 
 @section('scripts')
 
-     <script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
+     <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 
     <script>
      $(document).ready(function()  {
