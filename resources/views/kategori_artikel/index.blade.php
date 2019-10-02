@@ -11,15 +11,14 @@
                
                     <form>
                      <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Add Data</a>
-                        @csrf
-
+                       
                         <div class="form-group row">
                             <table align="center" border="1">
                                 <tr>
                                     <th>ID</th>
                                     <th>Nama</th>
                                     <th>ID User</th>
-                                    <th>CREATE</th>
+                                  
                                     <th>Aksi</th>
                                 </tr>
                                 @foreach($KategoriArtikel as $item)
@@ -27,13 +26,12 @@
                                         <td>{!! $item->id !!}</td>
                                         <td>{!! $item->nama !!}</td>
                                         <td>{!! $item->users_id !!}</td>
-                                        <td>{!! $item->created_at->format('d/m/Y N:i:s') !!}</td>
+                                  
                                         <td>
                                             <a href="{!! route('kategori_artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
                                             Lihat
                                             </a>
-                                        </td>
-                                        
+                                        </td>                         
                                     </tr>
                                 @endforeach
                             </table>

@@ -26,6 +26,14 @@ Route::post('/kategori_artikel','KategoriArtikelController@store')->name('katego
 Route::get('/kategori_artikel/{id}','KategoriArtikelController@show')->name('kategori_artikel.show');
 
 
+Route::get('/artikel','ArtikelrtikelController@index')->name('artikel.index');
+Route::get('/artikel/create','ArtikelController@create')->name('artikel.create');
+Route::post('/artikel','ArtikelController@store')->name('artikel.store');
+Route::get('/artikel/{id}','ArtikelController@show')->name('artikel.show');
+
+
+
+
 
 Route::get('/kategori_berita','KategoriBeritaController@index')->name('kategori_berita.index');
 Route::get('/kategori_galeri','KategoriGaleriController@index')->name('kategori_galeri.index');
