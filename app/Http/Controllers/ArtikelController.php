@@ -14,16 +14,14 @@ class ArtikelController extends Controller
         return view('artikel.index',compact('Artikel'));
  }
     public function show($id){
-    $Artikel=Artikel::find($id);
+    $artikel=Artikel::find($id);
 
-    return view('artikel.show',compact('Artikel'));
+    return view('artikel.show',compact('artikel'));
 }
     public function create(){
 
-        $KategoriArtikel= KategoriArtikel::pluck('nama','id');
-        
-
-        return view('artikel.create');
+        $kategoriArtikel= KategoriArtikel::pluck('nama','id');
+        return view('artikel.create', compact('kategoriArtikel'));
     }
 
     public function store(Request $request){

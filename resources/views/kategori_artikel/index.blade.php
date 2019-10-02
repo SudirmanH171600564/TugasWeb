@@ -13,7 +13,7 @@
                      <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Add Data</a>
                        
                         <div class="form-group row">
-                            <table align="center" border="1">
+                            <table border="1">
                                 <tr>
                                     <th>ID</th>
                                     <th>Nama</th>

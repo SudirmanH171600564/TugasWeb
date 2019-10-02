@@ -9,7 +9,7 @@
 
                   <div class="card-body">
                     <form method="post" action="{!! route('artikel.store') !!}">
-                    @include('artikel.form')  
+                    @include('artikel.form')   
                     </form>
                     
                  </div> 
