@@ -8,8 +8,8 @@
                  <div class="card-header">Tambah Kategori Artikel</div>
 
                   <div class="card-body">
-                    <form method="post" action="{!! route('kategori_berita.store') !!}">
-                    @include('kategori_berita.form')  
+                    <form method="post" action="{!! route('kategori_pengumuman.store') !!}">
+                    @include('kategori_pengumuman.form')  
                     </form>
                     
                  </div> 

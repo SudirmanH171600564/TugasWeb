@@ -9,12 +9,12 @@
                 <div class="card-header">{{ __('List Artikel') }}</div>
 
                 <div class="card-body">
-                <a href="{!! route('artikel.create') !!}" class="btn btn-primary" >Add Data</a>
+                <a href="{!! route('artikel.create') !!}" class="btn btn-primary" >Tambah Data</a>
                     <form>
                        
                         <div class="form-group row">
-                            <table align="center" border="1">
-                                <tr>
+                            <table border="1" >
+                                <tr bgcolor='yellow' align="center">
                                     <th>ID</th>
                                     <th>JUDUL </th>
                                     <th>ISI</th>

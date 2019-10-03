@@ -10,11 +10,11 @@
                 <div class="card-body">
                
                     <form>
-                     <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Add Data</a>
+                     <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
                        
                         <div class="form-group row">
                             <table border="1">
-                                <tr>
+                                <tr bgcolor='yellow' align="center">
                                     <th>ID</th>
                                     <th>Nama</th>
                                     <th>ID User</th>
