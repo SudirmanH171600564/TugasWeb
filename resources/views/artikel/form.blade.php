@@ -16,8 +16,8 @@
 
 
 <div class="form-group row">
-    <label for="kategori_artikel_id" class="col-md-4 col-form-label text-md-right">{{ __('Kategori Artikel') }}</label>   
-        <div class="col-md-8">
+    <label for="kategori_artikel_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Artikel') }}</label>   
+        <div class="col-md-10">
             {!! Form::select('kategori_artikel_id', $kategoriArtikel, null, ["class"=>"form-control","required"] ) !!}
 
     @error('kategori_artikel_id')
@@ -32,7 +32,7 @@
     <label for="isi" class="col-md-2 col-form-label text-md-right">{{ __('Isi') }}</label>
 
         <div class="col-md-10">
-            <input id="isi" type="text" class="form-control @error('isi') is-invalid @enderror" name="isi" value="{{ old('isi') }}" required autofocus>
+          
             {!! Form::textarea('isi', null,['class'=>'form-control']); !!}
 
     @error('isi')
