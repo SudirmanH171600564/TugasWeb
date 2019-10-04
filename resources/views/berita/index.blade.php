@@ -13,7 +13,6 @@
                     <form>
                         @csrf
 
-                        <div class="form-group row">
                             <table border="1">
                                 <tr bgcolor='yellow' align="center">
                                     <th>ID</th>
@@ -35,7 +34,9 @@
                                          <td>
                                         <a href="{!! route('berita.show',[$item->id]) !!}" class="btn btn-sm btn-success">
                                             Lihat
-                                            </a></td>
+                                            </a>
+                                            </td>
+
                                     </tr>
                                 @endforeach
                             </table>

@@ -12,7 +12,7 @@
                     <form>
                      <a href="{!! route('kategori_berita.create') !!}" class="btn btn-primary">Tambah Data</a>
                        
-                        <div class="form-group row">
+                       @csrf
                             <table border="1">
                                 <tr bgcolor='yellow' align="center">
                                     <th>ID</th>

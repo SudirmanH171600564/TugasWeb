@@ -10,10 +10,8 @@
 
                 <div class="card-body">
                 <a href="{!! route('pengumuman.create') !!}" class="btn btn-primary" >Tambah Data</a>
-                    <form>
+      
                         @csrf
-
-                        <div class="form-group row">
                             <table align="center" border="1">
                                 <tr bgcolor='yellow' align="center">
                                     <th>ID</th>

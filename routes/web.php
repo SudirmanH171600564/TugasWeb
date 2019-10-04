@@ -37,10 +37,12 @@ Route::get('/kategori_berita/create','KategoriBeritaController@create')->name('k
 Route::post('/kategori_berita','KategoriBeritaController@store')->name('kategori_berita.store');
 Route::get('/kategori_berita/{id}','KategoriBeritaController@show')->name('kategori_berita.show');
 
+
 Route::get('/berita','BeritaController@index')->name('berita.index');
 Route::get('/berita/create','BeritaController@create')->name('berita.create');
-Route::post('/berita','BeritaController@store')->name('berita.store');
 Route::get('/berita/{id}','BeritaController@show')->name('berita.show');
+Route::post('/berita','BeritaController@store')->name('berita.store');
+
 
 Route::get('/kategori_pengumuman','KategoriPengumumanController@index')->name('kategori_pengumuman.index');
 Route::get('/kategori_pengumuman/create','KategoriPengumumanController@create')->name('kategori_pengumuman.create');

@@ -13,12 +13,12 @@ class BeritaController extends Controller
 
         return view('berita.index',compact('Berita'));
 
+}public function show($id){
+    $berita=Berita::find($id);
+    
+    return view('berita.show',compact('berita'));
 }
-public function show($id){
-$berita=Berita::find($id);
 
-return view('berita.show',compact('berita'));
-}
 public function create(){
 
     $kategoriBerita= KategoriBerita::pluck('nama','id');
@@ -31,7 +31,8 @@ public function store(Request $request){
     Berita::create($input);
 
     return redirect(route('berita.index'));
-}
+
+    }
 }
 
 

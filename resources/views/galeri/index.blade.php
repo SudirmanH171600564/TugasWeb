@@ -9,13 +9,11 @@
                 <div class="card-header" align="center">{{ __('List Galeri') }}</div>
 
                 <div class="card-body">
-                <a href="{!! route('galeri.create') !!}" class="btn btn-primary" >Tambah Data</a>
-                    <form>
+                <a href="{!! route('galeri.create') !!}" class="btn btn-primary" >Tambah Data</a> 
                         @csrf
 
-                        <div class="form-group row">
-                            <table align="center" border="1">
-                                <tr tr bgcolor='yellow' align="center">
+                            <table border="1">
+                                <tr bgcolor='yellow' align="center">
                                     <th>ID</th>
                                     <th>NAMA </th>
                                     <th>KETERANGAN</th>
@@ -42,7 +40,6 @@
                                 @endforeach
                             </table>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

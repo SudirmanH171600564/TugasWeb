@@ -6,19 +6,15 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" >{{ __('List Kategori Pengumuman') }}</div>
-
-                <div class="card-body">
-               
-                    <form>
+                <div class="card-body">    
                      <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-primary">Tambah Data</a>
                        
-                        <div class="form-group row">
+                       @csrf
                             <table border="1">
                                 <tr bgcolor='yellow' align="center">
                                     <th>ID</th>
                                     <th>Nama</th>
                                     <th>ID User</th>
-                                  
                                     <th>Aksi</th>
                                 </tr>
                                 @foreach($KategoriPengumuman as $item)

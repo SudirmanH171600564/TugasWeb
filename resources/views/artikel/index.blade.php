@@ -12,7 +12,7 @@
                 <a href="{!! route('artikel.create') !!}" class="btn btn-primary" >Tambah Data</a>
                     <form>
                        
-                        <div class="form-group row">
+                        @csrf
                             <table border="1" >
                                 <tr bgcolor='yellow' align="center">
                                     <th>ID</th>
