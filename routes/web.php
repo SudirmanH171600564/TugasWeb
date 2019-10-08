@@ -20,11 +20,23 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('kategori_artikel','KategoriArtikelController');
+Route::resource('artikel','ArtikelController');
+Route::resource('kategori_berita','KategoriBeritaController');
+Route::resource('berita','BeritaController');
+Route::resource('kategori_pengumuman','KategoriPengumumanController');
+Route::resource('pengumuman','PengumumanController');
+Route::resource('kategori_galeri','KategoriGaleriController');
+Route::resource('galeri','GaleriController');
+
+/*
 Route::get('/kategori_artikel','KategoriArtikelController@index')->name('kategori_artikel.index');
 Route::get('/kategori_artikel/create','KategoriArtikelController@create')->name('kategori_artikel.create');
 Route::post('/kategori_artikel','KategoriArtikelController@store')->name('kategori_artikel.store');
 Route::get('/kategori_artikel/{id}','KategoriArtikelController@show')->name('kategori_artikel.show');
-
+Route::get('/kategori_artikel/{id}/edit','KategoriArtikelController@edit')->name('kategori_artikel.edit');
+Route::patch('/kategori_artikel/{id}','KategoriArtikelController@update')->name('kategori_artikel.update');
+Route::delete('/kategori_artikel/{id}','KategoriArtikelController@destroy')->name('kategori_artikel.destroy'); 
 
 Route::get('/artikel','ArtikelController@index')->name('artikel.index');
 Route::get('/artikel/create','ArtikelController@create')->name('artikel.create');
@@ -64,6 +76,6 @@ Route::get('/galeri/create','GaleriController@create')->name('galeri.create');
 Route::post('/galeri','GaleriController@store')->name('galeri.store');
 Route::get('/galeri/{id}','GaleriController@show')->name('galeri.show');
 
-
+*/
  
 

@@ -5,15 +5,20 @@
        <div class="row justify-content-center">
           <div class="col-md-8">
              <div class="card">
-                 <div class="card-header">Tambah Kategori Berita</div>
-    
+                 <div class="card-header">Edit pengumuman</div>
+
                   <div class="card-body">
-                    {!! Form::open(['route' => 'kategori_berita.store', 'method' => 'post']) !!}
-                    @include('kategori_berita.form')  
-                   {!! Form::close() !!}
+                    {!! Form::model($pengumuman, ['route' => ['pengumuman.update', $pengumuman->id],'method'=>'patch']) !!}
+                    @include('pengumuman.form')  
+                   {!! Form::close() !!}    
                  </div> 
              </div>
            </div>
          </div>
     </div>
+
+
+
+
+
 @endsection

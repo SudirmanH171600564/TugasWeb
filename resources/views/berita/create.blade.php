@@ -6,12 +6,11 @@
           <div class="col-md-8">
              <div class="card">
                  <div class="card-header">Tambah Berita</div>
-
+    
                   <div class="card-body">
-                    <form method="post" action="{!! route('berita.store') !!}">
-                    @include('berita.form')   
-                    </form>
-                    
+                    {!! Form::open(['route' => 'berita.store', 'method' => 'post']) !!}
+                    @include('berita.form')  
+                   {!! Form::close() !!}
                  </div> 
              </div>
            </div>

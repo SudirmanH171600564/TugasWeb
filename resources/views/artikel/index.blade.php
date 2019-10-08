@@ -10,7 +10,7 @@
 
                 <div class="card-body">
                 <a href="{!! route('artikel.create') !!}" class="btn btn-primary" >Tambah Data</a>
-                    <form>
+                  <br></br> 
                        
                         @csrf
                             <table border="1" >
@@ -19,7 +19,8 @@
                                     <th>JUDUL </th>
                                     <th>ISI</th>
                                     <th>USERS ID</th>
-                                    <th>Created AT</th>
+                                    <th>Create</th>
+                                    <th>Update</th>
                                     <th>Aksi</th>
                                     
                                 </tr>
@@ -29,16 +30,27 @@
                                         <td>{{ $item->judul }}</td>
                                         <td>{{ $item->isi }}</td>
                                         <td>{{ $item->users_id }}</td>
-                                        <td>{{ $item->created_at }}</td>
+                                        <td>{!! $item->created_at->format('d/m/Y h:i:s') !!}</td>
+                                        <td>{!! $item->updated_at->format('d/m/Y h:i:s') !!}</td>
                                         <td>
-                                        <a href="{!! route('artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
+                                            <a href="{!! route('artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
                                             Lihat
-                                            </a></td>
+                                            </a>
+
+                                            <a href="{!! route('artikel.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
+                                            Ubah
+                                            </a>
+
+                                             {!! Form::open(['route' => ['artikel.destroy', $item->id],'method'=>'delete']) !!}
+
+                                            {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini?')"]); !!}
+
+                                             {!! Form::close() !!}
+                                             </td>
                                     </tr>
                                 @endforeach
                             </table>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

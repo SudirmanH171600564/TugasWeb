@@ -11,5 +11,7 @@ class Pengumuman extends Model
 
     protected $fillable=['judul','isi','users_id','kategori_pengumuman_id'];
 
-    protected $casts=[];
+    protected $casts=[
+        
+    ];
 }
