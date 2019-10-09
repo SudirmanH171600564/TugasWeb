@@ -17,7 +17,6 @@ class PengumumanController extends Controller
     return view('pengumuman.show',compact('pengumuman'));
 }
  public function create(){
-
      $kategoriPengumuman= KategoriPengumuman::pluck('nama','id');
      return view('pengumuman.create',compact('kategoriPengumuman'));
  }
@@ -31,11 +30,12 @@ class PengumumanController extends Controller
 
  }public function edit($id){
     $pengumuman=Pengumuman::find($id);
-   
+    $kategoriPengumuman= KategoriPengumuman::pluck('nama','id');
+
     if(empty($pengumuman)){
       return redirect(route('pengumuman.index'));
     }
-    return view('pengumuman.edit', compact('pengumuman'));
+    return view('pengumuman.edit', compact('pengumuman','kategoriPengumuman'));
   }
   
   public function update($id,Request $request){

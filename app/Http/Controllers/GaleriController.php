@@ -20,7 +20,6 @@ class GaleriController extends Controller
     return view('galeri.show',compact('galeri'));
 }
     public function create(){
-    
         $kategoriGaleri= KategoriGaleri::pluck('nama','id');
         return view('galeri.create', compact('kategoriGaleri'));
 }
@@ -33,11 +32,12 @@ class GaleriController extends Controller
         return redirect(route('galeri.index'));
     } public function edit($id){
         $galeri=Galeri::find($id);
-       
-        if(empty($berita)){
+        $kategoriGaleri= KategoriGaleri::pluck('nama','id');
+
+        if(empty($galeri)){
           return redirect(route('galeri.index'));
         }
-        return view('galeri.edit', compact('galeri'));
+        return view('galeri.edit', compact('galeri','kategoriGaleri'));
       }
       
       public function update($id,Request $request){

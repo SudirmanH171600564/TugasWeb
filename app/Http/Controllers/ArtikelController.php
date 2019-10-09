@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Artikel;
@@ -24,7 +23,7 @@ class ArtikelController extends Controller
     }
 
     public function store(Request $request){
-        $input=$request->all();
+        $input= $request->all();
 
         Artikel::create($input);
 
@@ -32,11 +31,12 @@ class ArtikelController extends Controller
 
     } public function edit($id){
         $artikel=Artikel::find($id);
-       
+        $kategoriArtikel= KategoriArtikel::pluck('nama','id');
+
         if(empty($artikel)){
           return redirect(route('artikel.index'));
         }
-        return view('artikel.edit', compact('artikel'));
+        return view('artikel.edit', compact('artikel','kategoriArtikel'));
       }
       
       public function update($id,Request $request){

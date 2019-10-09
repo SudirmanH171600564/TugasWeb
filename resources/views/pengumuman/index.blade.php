@@ -10,8 +10,7 @@
                     <form>
                         @csrf
                         <div class="form-group row">
-                            <a class="btn btn-elegant" href="{{ route('pengumuman.create') }}">Tambah Data</a>
-                            <button type="button" class="btn btn-elegant"><i class="far fa-user pr-2" aria-hidden="true"></i>User</button>
+                            <a class="btn btn-elegant" href="{{ route('pengumuman.create') }}">Tambah Data</a>  
                         </div>
                         <div class="form-group row">
                             <table class="table table-striped table-responsive">  

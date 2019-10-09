@@ -20,7 +20,6 @@ class BeritaController extends Controller
 }
 
 public function create(){
-
     $kategoriBerita= KategoriBerita::pluck('nama','id');
     return view('berita.create', compact('kategoriBerita'));
 }
@@ -34,11 +33,12 @@ public function store(Request $request){
 
 }public function edit($id){
     $berita=Berita::find($id);
-   
+    $kategoriBerita= KategoriBerita::pluck('nama','id');
+
     if(empty($berita)){
       return redirect(route('berita.index'));
     }
-    return view('berita.edit', compact('berita'));
+    return view('berita.edit', compact('berita','kategoriBerita'));
   }
   
   public function update($id,Request $request){

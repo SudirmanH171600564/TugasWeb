@@ -15,7 +15,7 @@
                         <div class="form-group row">
                             <table class="table table-striped table-responsive">  
                                 <thead class="table thead">
-                                  <tr bgcolor="02ff9e">
+                                  <tr bgcolor="#02ff9e">
                                     <th>ID</th>
                                     <th>NAMA</th>
                                     <th>USERS ID</th>
