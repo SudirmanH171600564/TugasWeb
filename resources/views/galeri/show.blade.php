@@ -54,8 +54,8 @@
                          <label class="col-md-8 col-form-label text-md-left">{!! $galeri->kategori_galeri_id !!}</label>
                     </div>
 
-                   
-<a href="{!! route('galeri.index') !!}" class="btn btn-danger">
+       <div align="center">            
+        <a href="{!! route('galeri.index') !!}" class="btn btn-danger">
            {{ __('Batal') }}
         </a>
                 </div>

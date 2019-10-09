@@ -1,20 +1,21 @@
-
 @extends('layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-13">
             <div class="card">
-                <div class="card-header" >{{ __('List Galeri') }}</div>
-
+                <div class="card-header text-center">{{ __('List Galeri') }}</div>
                 <div class="card-body">
-                <a href="{!! route('galeri.create') !!}" class="btn btn-primary" >Tambah Data</a> 
-                <br></br> 
+                    <form>
                         @csrf
-
-                            <table border="1">
-                                <tr bgcolor='yellow' align="center">
+                        <div class="form-group row">
+                            <a class="btn btn-primary" href="{{ route('galeri.create') }}">Tambah Data</a>
+                        </div>
+                        <div class="form-group row">
+                            <table class="table table-striped table-responsive">  
+                                <thead class="table thead">
+                                  <tr bgcolor="02ff9e">
                                     <th>ID</th>
                                     <th>NAMA </th>
                                     <th>KETERANGAN</th>
@@ -24,6 +25,8 @@
                                     <th>UPDATE AT</th>
                                     <th>AKSI</th>
                                 </tr>
+                                </thead>
+                                <tbody class="text-justify">
                                 @foreach($Galeri as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
@@ -34,28 +37,21 @@
                                         <td>{!! $item->created_at->format('d/m/Y h:i:s') !!}</td>
                                         <td>{!! $item->updated_at->format('d/m/Y h:i:s') !!}</td>
                                         <td>
-                                            <a href="{!! route('galeri.show',[$item->id]) !!}" class="btn btn-sm btn-success">
-                                            Lihat
-                                            </a>
-
-                                            <a href="{!! route('galeri.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
-                                            Ubah
-                                            </a>
-
-                                             {!! Form::open(['route' => ['galeri.destroy', $item->id],'method'=>'delete']) !!}
-
-                                            {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini?')"]); !!}
-
-                                             {!! Form::close() !!}
+                                            <a class="btn btn-sm btn-primary btn-block" href="{{ route('galeri.show', $item->id) }}">View</a>
+                                            <a class="btn btn-sm btn-secondary btn-block" href="{{ route('galeri.edit', $item->id) }}">Edit</a>   
+                                            </br>
+                                            {!! Form::open(['route' => ['galeri.destroy', $item->id], 'method' => 'delete']) !!}
+                                            {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger btn-block']) !!}
+                                                {!! Form::close() !!}
                                              </td>
-                                    </tr>
-                                @endforeach
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
-                </div>
+                    </form>
+                </div>  
             </div>
         </div>
     </div>
-</div>
-
 @endsection

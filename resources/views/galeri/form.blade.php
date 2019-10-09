@@ -5,7 +5,7 @@
 
         <div class="col-md-10">
 
-         {!! Form::text('judul', null,['class'=>"form-control",'required','autofocus']); !!}
+         {!! Form::text('nama', null,['class'=>"form-control",'required','autofocus']); !!}
 
     @error('nama')
        <span class="invalid-feedback" role="alert">
@@ -14,7 +14,6 @@
     @enderror
     </div>
 </div>
-
 
 <div class="form-group row">
     <label for="kategori_galeri_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Galeri') }}</label>   

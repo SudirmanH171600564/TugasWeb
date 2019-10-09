@@ -1,60 +1,56 @@
-
 @extends('layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('List Artikel') }}</div>
-
+                <div class="card-header text-center">{{ __('List Artikel') }}</div>
                 <div class="card-body">
-                <a href="{!! route('artikel.create') !!}" class="btn btn-primary" >Tambah Data</a>
-                  <br></br> 
-                       
+                    <form>
                         @csrf
-                            <table border="1" >
-                                <tr bgcolor='yellow' align="center">
+                        <div class="form-group row">
+                            <a class="btn btn-primary" href="{{ route('artikel.create') }}">Tambah Data</a>
+                        </div>
+                        <div class="form-group row">
+                            <table class="table table-striped table-responsive">  
+                                <thead class="table thead">
+                                  <tr bgcolor="02ff9e">
                                     <th>ID</th>
                                     <th>JUDUL </th>
                                     <th>ISI</th>
                                     <th>USERS ID</th>
                                     <th>Create</th>
                                     <th>Update</th>
-                                    <th>Aksi</th>
-                                    
+                                    <th>Aksi</th>  
                                 </tr>
+                                </thead>
+                                <tbody class="text-justify">
                                 @foreach($Artikel as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->judul }}</td>
-                                        <td>{{ $item->isi }}</td>
+                                        <td>{{ Str::limit($item->judul, 30) }}</td>
+                                        <td>{{ Str::limit($item->isi, 200) }}</td>
                                         <td>{{ $item->users_id }}</td>
                                         <td>{!! $item->created_at->format('d/m/Y h:i:s') !!}</td>
                                         <td>{!! $item->updated_at->format('d/m/Y h:i:s') !!}</td>
                                         <td>
-                                            <a href="{!! route('artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
-                                            Lihat
-                                            </a>
-
-                                            <a href="{!! route('artikel.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
-                                            Ubah
-                                            </a>
-
-                                             {!! Form::open(['route' => ['artikel.destroy', $item->id],'method'=>'delete']) !!}
-
-                                            {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini?')"]); !!}
-
-                                             {!! Form::close() !!}
+                                            <a class="btn btn-sm btn-primary btn-block" href="{{ route('artikel.show', $item->id) }}">View</a>
+                                            <a class="btn btn-sm btn-secondary btn-block" href="{{ route('artikel.edit', $item->id) }}">Edit</a>
+                                            
+                                            </br>
+                                            {!! Form::open(['route' => ['artikel.destroy', $item->id], 'method' => 'delete']) !!}
+                                            {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger btn-block']) !!}
+                                                {!! Form::close() !!}
                                              </td>
-                                    </tr>
-                                @endforeach
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
-                </div>
+                    </form>
+                </div>  
             </div>
         </div>
     </div>
-</div>
-
 @endsection

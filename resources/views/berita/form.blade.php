@@ -18,8 +18,8 @@
 <div class="form-group row">
     <label for="kategori_berita_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Berita') }}</label>   
         <div class="col-md-10">
-            {!! Form::select('kategori_berita_id', $kategoriArtikel, null, ["class"=>"form-control","required"] ) !!}
-
+            {!! Form::select('kategori_berita_id', $kategoriBerita, null, ["class"=>"form-control","required"] ) !!}
+        
     @error('kategori_berita_id')
        <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -43,15 +43,12 @@
     </div>
 </div>
 
-{!! Form::hidden ('users_id', Auth::id()); !!}
+{!! Form::hidden ('users_id', Auth::id(), ['name' => 'users_id']) !!}
 
 <div class="form-group row mb-0">
     <div class="col-md-10 offset-md-2">
-        <button type="submit" class="btn btn-primary">
-           {{ __('Save Data') }}
-        </button>
-        
-         <a href="{!! route('artikel.index') !!}" class="btn btn-danger">
+        {!! Form::submit(__('Save Data'), ['class' => 'btn btn-primary']) !!}
+         <a href="{!! route('berita.index') !!}" class="btn btn-danger">
            {{ __('Batal') }}
         </a>
     </div>

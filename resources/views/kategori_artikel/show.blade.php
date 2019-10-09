@@ -38,11 +38,11 @@
                          <label class="col-md-4 col-form-label text-md-right">UPDATE</label>
                          <label class="col-md-8 col-form-label text-md-left">{!! $KategoriArtikel->updated_at !!}</label>
                     </div>
-            
-                   <a href="{!! route('kategori_artikel.index') !!}" class="btn btn-danger">
-           {{ __('Batal') }}
-        </a>
-
+                    
+          <div align="center">       
+          <a href="{!! route('kategori_artikel.index') !!}" class="btn btn-danger">
+              {{ __('Batal') }}
+              </a>
                 </div>
             </div>
         </div>

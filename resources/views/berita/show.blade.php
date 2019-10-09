@@ -4,12 +4,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('List Berita') }}</div>
 
                 <div class="card-body">
-               
+                @csrf
                     <div class="form-group row">
                          <label class="col-md-4 col-form-label text-md-right">ID</label>
                          <label class="col-md-8 col-form-label text-md-left">{!! $berita->id !!}</label>
@@ -49,8 +49,8 @@
                          <label class="col-md-8 col-form-label text-md-left">{!! $berita->kategori_berita_id !!}</label>
                     </div>
 
-                   
-<a href="{!! route('berita.index') !!}" class="btn btn-danger">
+          <div align="center">       
+          <a href="{!! route('berita.index') !!}" class="btn btn-danger">
            {{ __('Batal') }}
         </a>
                 </div>

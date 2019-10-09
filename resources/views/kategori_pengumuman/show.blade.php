@@ -39,10 +39,10 @@
                          <label class="col-md-8 col-form-label text-md-left">{!! $KategoriPengumuman->updated_at !!}</label>
                     </div>
             
-                   <a href="{!! route('kategori_pengumuman.index') !!}" class="btn btn-danger">
+           <div align="center">  
+           <a href="{!! route('kategori_pengumuman.index') !!}" class="btn btn-danger">
            {{ __('Batal') }}
-        </a>
-
+           </a>
                 </div>
             </div>
         </div>
